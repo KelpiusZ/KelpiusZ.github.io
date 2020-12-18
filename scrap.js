@@ -86,6 +86,7 @@ questionFive.setAttribute('id', 'levelOneQFive');
 // console.log(questionFour);
 // console.log(questionFive);
 
+
 // Create Buttons: "Choice A"; "Choice B"; "Choice C"; "Choice D"
 const choiceA = document.createElement('button');
 const choiceB = document.createElement('button');
@@ -120,17 +121,33 @@ document.body.appendChild(choiceB);
 document.body.appendChild(choiceC);
 document.body.appendChild(choiceD);
 
-
 // Write a function that when turns the correct button choice to a question green and red if incorrect.
 
 let correctAns = document.querySelector('.rightAns');
-let incorrectAns = document.querySelector('.wrongAns');
+let incorrectAns = document.querySelectorAll('.wrongAns');
 
 correctAns.addEventListener('click', () => 
 correctAns.style.background= "green",
 // console.log("green")
 );
 
-incorrectAns.addEventListener('click', (event) => {
-    event.currentTarget.style.background = "red";
-})
+for (let i = 0; i <incorrectAns.length; i++) {
+incorrectAns[i].addEventListener('click', () => 
+        incorrectAns[i].style.background = "red",
+        // console.log("red"),
+        // console.log(incorrectAns)
+)}
+
+
+
+
+//Write a function for problem 1, where if the answer clicked the button will turn red or green depending on which answer was clicked.
+
+// const levelOneQs = class {
+//     constructor(question, answer) {
+//         this.question = question;
+//         this.answer = answer;
+//     }
+// } 
+
+// const firstQuestion = new levelOneQs (`${questionOne}`,)
