@@ -2,7 +2,7 @@
 
 // Step 1: Create all my buttons using DOM
 
-// Buttons: "Start"; "Choice A"; "Choice B"; "Choice C"; "Choice D"
+// Buttons: "Start"
 const startBtn = document.createElement('button');
 startBtn.innerText = 'START';
 

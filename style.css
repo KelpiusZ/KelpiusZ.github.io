@@ -2,3 +2,7 @@ body {
     background-color: blanchedalmond;
     text-align: center;
 }
+
+.rightAns, .wrongAns {
+    background-color: lightskyblue;
+}
