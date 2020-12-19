@@ -17,49 +17,50 @@
 
 // Create the ojects that will hold the array of questions and answers
 questions = [
-    'Question 1: Which architect came up with the quote, "Less is a bore?"',
-    'Question 2: Random question about architecture?',
-    'Question 3: Random question about architecture?',
-    'Question 4: Random question about architecture?',
-    'Question 5: Random question about architecture?',
-    ]
+    'Question 1: Which architect came up with the quote, "Less is a bore"?',
+    'Question 2: Second Random question about architecture? #2',
+    'Question 3: Third question about architecture? #3',
+    'Question 4: Fourth question about architecture? #4',
+    'Question 5: Fifth question about architecture? #5',
+]
 
-answers = {
-    ansToQuestOne: [
+answers = [
+    [
         "A: Zaha Hadid",
         "B: Le Corbsier",
         "C: Robert Venturi",
         "D: Frank Gehry",
     ],
 
-    ansToQuestTwo: [
+     [
         "A: ",
         "B: ",
         "C: ",
         "D: ",
     ],
 
-    ansToQuestThree: [
+    [
         "A: ",
         "B: ",
         "C: ",
         "D: ",
     ],
 
-    ansToQuestFour: [
+    [
         "A: ",
         "B: ",
         "C: ",
         "D: ",
     ],
 
-    ansToQuestFive: [
+    [
         "A: ",
         "B: ",
         "C: ",
         "D: ",
     ],
-}
+]
+
 
 // Create a paragraph that will hold the text of the question.
 const questionOne = document.createElement('p');
@@ -93,10 +94,10 @@ const choiceB = document.createElement('button');
 const choiceC = document.createElement('button');
 const choiceD = document.createElement('button');
 
-choiceA.innerText = `${answers.ansToQuestOne[0]}`;
-choiceB.innerText = `${answers.ansToQuestOne[1]}`;
-choiceC.innerText = `${answers.ansToQuestOne[2]}`;
-choiceD.innerText = `${answers.ansToQuestOne[3]}`;
+// choiceA.innerText = `${answers.ansToQuestOne[0]}`;
+// choiceB.innerText = `${answers.ansToQuestOne[1]}`;
+// choiceC.innerText = `${answers.ansToQuestOne[2]}`;
+// choiceD.innerText = `${answers.ansToQuestOne[3]}`;
 
 choiceA.setAttribute('class', 'wrongAns');
 choiceB.setAttribute('class', 'wrongAns');
@@ -110,18 +111,85 @@ choiceD.setAttribute('class', 'wrongAns');
 // console.log(choiceD);
 
 // Use the appendChild method to add to the HTML body
-document.body.appendChild(questionOne);
+
+// document.body.appendChild(questionOne);
 // document.body.appendChild(questionTwo);
 // document.body.appendChild(questionThree);
 // document.body.appendChild(questionFour);
 // document.body.appendChild(questionFour);
+
+// create a button that will load up the next question
+
+const nextBtn = document.createElement('button');
+nextBtn.setAttribute('class', 'nextQuestion');
+nextBtn.innerText = "Next";
+document.body.appendChild(nextBtn);
+
+// create a loop that goes thru the array of question.
+
+let availableQuestions = [' '];
+let nextSetOfQuest = 0
+
+nextQuest = () => {
+    let divQuestion = document.querySelector(".oneQuestion");
+    let newQuest =  questions[nextSetOfQuest];
+    divQuestion.innerText = newQuest;
+    
+    let ansChoice = answers[nextSetOfQuest];
+    choiceA.innerText = ansChoice[0];
+    choiceB.innerText = ansChoice[1];
+    choiceC.innerText = ansChoice[2];
+    choiceD.innerText = ansChoice[3];
+
+    nextSetOfQuest++
+};
+
+nextBtn.addEventListener('click', nextQuest)
+
+
+
+
+
+
+//If user clicks on the "next" button it will load the next set of questions and choices
+
 
 document.body.appendChild(choiceA);
 document.body.appendChild(choiceB);
 document.body.appendChild(choiceC);
 document.body.appendChild(choiceD);
 
-// Write a function that when turns the correct button choice to a question green and red if incorrect.
+
+// Create a tag for the level and the score.
+
+const levelScore = document.createElement('h2');
+const currentLevel = document.createElement('h2');
+
+levelScore.setAttribute('class', 'lvlScore');
+currentLevel.setAttribute('class', 'currentLvl')
+
+levelScore.innerText = '000';
+currentLevel.innerText = 'Level: 1';
+
+document.body.appendChild(levelScore);
+document.body.appendChild(currentLevel);
+
+
+// Write a function that will increment the score when the correct answer is clicked.
+
+let scoreCounter = 0;
+const increaseScore = () => {
+    scoreCounter += 5;
+    if(scoreCounter < 10) {
+        levelScore.innerHTML = `00${scoreCounter}`;
+    } else if (scoreCounter < 100) {
+        levelScore.innerHTML = `0${scoreCounter}`;
+    }
+}
+
+
+
+// Write a function that when turns the correct button choice to a question green and red if incorrect. Also the green button must add 10 points to the score when clicked.
 
 let correctAns = document.querySelector('.rightAns');
 let incorrectAns = document.querySelectorAll('.wrongAns');
@@ -131,23 +199,11 @@ correctAns.style.background= "green",
 // console.log("green")
 );
 
+correctAns.addEventListener('click', increaseScore)
+
 for (let i = 0; i <incorrectAns.length; i++) {
 incorrectAns[i].addEventListener('click', () => 
         incorrectAns[i].style.background = "red",
         // console.log("red"),
         // console.log(incorrectAns)
 )}
-
-
-
-
-//Write a function for problem 1, where if the answer clicked the button will turn red or green depending on which answer was clicked.
-
-// const levelOneQs = class {
-//     constructor(question, answer) {
-//         this.question = question;
-//         this.answer = answer;
-//     }
-// } 
-
-// const firstQuestion = new levelOneQs (`${questionOne}`,)
