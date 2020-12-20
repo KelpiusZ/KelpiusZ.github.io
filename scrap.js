@@ -18,10 +18,10 @@
 // Create the ojects that will hold the array of questions and answers
 questions = [
     'Question 1: Which architect came up with the quote, "Less is a bore"?',
-    'Question 2: Second Random question about architecture? #2',
-    'Question 3: Third question about architecture? #3',
-    'Question 4: Fourth question about architecture? #4',
-    'Question 5: Fifth question about architecture? #5',
+    'Question 2: Which building is the second tallest building in the world?',
+    'Question 3: Which female architect was the first to win the Pritzker Architecture Prize?',
+    "Question 4: Which of these is the world's tallest circular building?",
+    'Question 5: Which of these architects designed Fallingwater?',
 ]
 
 answers = [
@@ -33,32 +33,32 @@ answers = [
     ],
 
      [
-        "A: ",
-        "B: ",
-        "C: ",
-        "D: ",
+        "A: Lotte World Tower",
+        "B: Shanghai Tower",
+        "C: Burj Khalifa",
+        "D: One World Trade Center",
     ],
 
     [
-        "A: ",
-        "B: ",
-        "C: ",
-        "D: ",
+        "A: Zaha Hadid",
+        "B: Kazuyo Sejima",
+        "C: Carme Pigem",
+        "D: Yvonne Farrell",
     ],
 
     [
-        "A: ",
-        "B: ",
-        "C: ",
-        "D: ",
+        "A: Al Dar Headquaters",
+        "B: Phoenix International Media Center",
+        "C: The Guangzhou Circle",
+        "D: Radcliffe Camera",
     ],
 
     [
-        "A: ",
-        "B: ",
-        "C: ",
-        "D: ",
-    ],
+        "A: Renzo Piano",
+        "B: Frank Gehry",
+        "C: Ole Scheeren",
+        "D: Frank Lloyd Wright",
+    ]
 ]
 
 
@@ -127,11 +127,10 @@ document.body.appendChild(nextBtn);
 
 // create a loop that goes thru the array of question.
 
-let availableQuestions = [' '];
 let nextSetOfQuest = 0
 
 nextQuest = () => {
-    let divQuestion = document.querySelector(".oneQuestion");
+    let divQuestion = document.querySelector(".currentQuestion");
     let newQuest =  questions[nextSetOfQuest];
     divQuestion.innerText = newQuest;
     
@@ -145,9 +144,6 @@ nextQuest = () => {
 };
 
 nextBtn.addEventListener('click', nextQuest)
-
-
-
 
 
 
