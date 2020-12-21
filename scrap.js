@@ -94,6 +94,26 @@ const choiceB = document.createElement('button');
 const choiceC = document.createElement('button');
 const choiceD = document.createElement('button');
 
+// const choiceE = document.createElement('button');
+// const choiceF = document.createElement('button');
+// const choiceG = document.createElement('button');
+// const choiceH = document.createElement('button');
+
+// const choiceI = document.createElement('button');
+// const choiceJ = document.createElement('button');
+// const choiceK = document.createElement('button');
+// const choiceL = document.createElement('button');
+
+// const choiceM = document.createElement('button');
+// const choiceN = document.createElement('button');
+// const choiceO = document.createElement('button');
+// const choiceP = document.createElement('button');
+
+// const choiceQ = document.createElement('button');
+// const choiceR = document.createElement('button');
+// const choiceS = document.createElement('button');
+// const choiceT = document.createElement('button');
+
 // choiceA.innerText = `${answers.ansToQuestOne[0]}`;
 // choiceB.innerText = `${answers.ansToQuestOne[1]}`;
 // choiceC.innerText = `${answers.ansToQuestOne[2]}`;
@@ -104,6 +124,30 @@ choiceB.setAttribute('class', 'wrongAns');
 choiceC.setAttribute('class', 'rightAns');
 choiceD.setAttribute('class', 'wrongAns');
 
+// choiceE.setAttribute('class', 'wrongAns');
+// choiceF.setAttribute('class', 'rightAns');
+// choiceG.setAttribute('class', 'wrongAns');
+// choiceH.setAttribute('class', 'wrongAns');
+
+// choiceI.setAttribute('class', 'wrongAns');
+// choiceJ.setAttribute('class', 'wrongAns');
+// choiceK.setAttribute('class', 'rightAns');
+// choiceL.setAttribute('class', 'wrongAns');
+
+// choiceM.setAttribute('class', 'wrongAns');
+// choiceN.setAttribute('class', 'wrongAns');
+// choiceO.setAttribute('class', 'rightAns');
+// choiceP.setAttribute('class', 'wrongAns');
+
+// choiceQ.setAttribute('class', 'wrongAns');
+// choiceR.setAttribute('class', 'wrongAns');
+// choiceS.setAttribute('class', 'rightAns');
+// choiceT.setAttribute('class', 'wrongAns');
+
+document.body.appendChild(choiceA);
+document.body.appendChild(choiceB);
+document.body.appendChild(choiceC);
+document.body.appendChild(choiceD);
 
 // console.log(choiceA);
 // console.log(choiceB);
@@ -118,6 +162,7 @@ choiceD.setAttribute('class', 'wrongAns');
 // document.body.appendChild(questionFour);
 // document.body.appendChild(questionFour);
 
+//If user clicks on the "next" button it will load the next set of questions and choices
 // create a button that will load up the next question
 
 const nextBtn = document.createElement('button');
@@ -129,7 +174,7 @@ document.body.appendChild(nextBtn);
 
 let nextSetOfQuest = 0
 
-nextQuest = () => {
+nextQuest = (event) => {
     let divQuestion = document.querySelector(".currentQuestion");
     let newQuest =  questions[nextSetOfQuest];
     divQuestion.innerText = newQuest;
@@ -147,13 +192,6 @@ nextBtn.addEventListener('click', nextQuest)
 
 
 
-//If user clicks on the "next" button it will load the next set of questions and choices
-
-
-document.body.appendChild(choiceA);
-document.body.appendChild(choiceB);
-document.body.appendChild(choiceC);
-document.body.appendChild(choiceD);
 
 
 // Create a tag for the level and the score.
@@ -164,8 +202,8 @@ const currentLevel = document.createElement('h2');
 levelScore.setAttribute('class', 'lvlScore');
 currentLevel.setAttribute('class', 'currentLvl')
 
-levelScore.innerText = '000';
-currentLevel.innerText = 'Level: 1';
+levelScore.innerText = 'SCORE: 000';
+currentLevel.innerText = 'LEVEL: 1';
 
 document.body.appendChild(levelScore);
 document.body.appendChild(currentLevel);
@@ -176,10 +214,11 @@ document.body.appendChild(currentLevel);
 let scoreCounter = 0;
 const increaseScore = () => {
     scoreCounter += 5;
-    if(scoreCounter < 10) {
-        levelScore.innerHTML = `00${scoreCounter}`;
+    if(scoreCounter < 25) {
+        levelScore.innerHTML = `SCORE: 00${scoreCounter}`;
     } else if (scoreCounter < 100) {
-        levelScore.innerHTML = `0${scoreCounter}`;
+        levelScore.innerHTML = `SCORE: 0${scoreCounter}`;
+        window.location.href = 'level2.html';
     }
 }
 

@@ -91,6 +91,10 @@ choiceB.setAttribute('class', 'wrongAns');
 choiceC.setAttribute('class', 'rightAns');
 choiceD.setAttribute('class', 'wrongAns');
 
+document.body.appendChild(choiceA);
+document.body.appendChild(choiceB);
+document.body.appendChild(choiceC);
+document.body.appendChild(choiceD);
 
 // console.log(choiceA);
 // console.log(choiceB);
@@ -105,6 +109,7 @@ choiceD.setAttribute('class', 'wrongAns');
 // document.body.appendChild(questionFour);
 // document.body.appendChild(questionFour);
 
+//If user clicks on the "next" button it will load the next set of questions and choices
 // create a button that will load up the next question
 
 const nextBtn = document.createElement('button');
@@ -132,17 +137,6 @@ nextQuest = () => {
 
 nextBtn.addEventListener('click', nextQuest)
 
-
-
-//If user clicks on the "next" button it will load the next set of questions and choices
-
-
-document.body.appendChild(choiceA);
-document.body.appendChild(choiceB);
-document.body.appendChild(choiceC);
-document.body.appendChild(choiceD);
-
-
 // Create a tag for the level and the score.
 
 const levelScore = document.createElement('h2');
@@ -151,8 +145,8 @@ const currentLevel = document.createElement('h2');
 levelScore.setAttribute('class', 'lvlScore');
 currentLevel.setAttribute('class', 'currentLvl')
 
-levelScore.innerText = '000';
-currentLevel.innerText = 'Level: 1';
+levelScore.innerText = 'SCORE: 000';
+currentLevel.innerText = 'LEVEL: 1';
 
 document.body.appendChild(levelScore);
 document.body.appendChild(currentLevel);
@@ -163,10 +157,11 @@ document.body.appendChild(currentLevel);
 let scoreCounter = 0;
 const increaseScore = () => {
     scoreCounter += 5;
-    if(scoreCounter < 10) {
-        levelScore.innerHTML = `00${scoreCounter}`;
+    if(scoreCounter < 25) {
+        levelScore.innerHTML = `SCORE: 00${scoreCounter}`;
     } else if (scoreCounter < 100) {
-        levelScore.innerHTML = `0${scoreCounter}`;
+        levelScore.innerHTML = `SCORE: 0${scoreCounter}`;
+        window.location.href = 'level2.html';
     }
 }
 
