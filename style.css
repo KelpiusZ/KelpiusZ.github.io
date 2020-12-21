@@ -13,13 +13,22 @@ body {
     border-radius: 10px;
 }
 
-.rightAns, .wrongAns {
+/* .rightAns, .wrongAns {
+    background-color: lightskyblue;
+    padding: 50px;
+    margin: 40px 40px 20px 40px;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+} */
+
+#buttonA, #buttonB, #buttonC, #buttonD {
     background-color: lightskyblue;
     padding: 50px;
     margin: 40px 40px 20px 40px;
     border-radius: 10px;
     font-family: 'Open Sans', sans-serif;
 }
+
 
 .lvlScore {
     display: flex;
@@ -55,4 +64,5 @@ h1 {
     position: relative;
     letter-spacing: 2px;
     padding: 1rem;
+    font-family: 'Open Sans', sans-serif;
 }

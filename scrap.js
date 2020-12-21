@@ -16,50 +16,108 @@
 // console.log("Hello World from Level One")
 
 // Create the ojects that will hold the array of questions and answers
-questions = [
-    'Question 1: Which architect came up with the quote, "Less is a bore"?',
-    'Question 2: Which building is the second tallest building in the world?',
-    'Question 3: Which female architect was the first to win the Pritzker Architecture Prize?',
-    "Question 4: Which of these is the world's tallest circular building?",
-    'Question 5: Which of these architects designed Fallingwater?',
+questionsArray = [
+    {
+        question: 'Question 1: Which architect came up with the quote, "Less is a bore"?',
+        answers: [
+            "A: Zaha Hadid",
+            "B: Le Corbsier",
+            "C: Robert Venturi",
+            "D: Frank Gehry"
+        ],
+        correctAns: "C: Robert Venturi"
+    },
+
+    {
+        question: 'Question 2: Which building is the second tallest building in the world?',
+        answers: [
+            "A: Lotte World Tower",
+            "B: Shanghai Tower",
+            "C: Burj Khalifa",
+            "D: One World Trade Center"
+        ],
+        correctAns: "B: Shanghai Tower"
+    },
+
+    {
+        question: 'Question 3: Which female architect was the first to win the Pritzker Architecture Prize?',
+        answers: [
+            "A: Zaha Hadid",
+            "B: Kazuyo Sejima",
+            "C: Carme Pigem",
+            "D: Yvonne Farrell"
+        ],
+        correctAns: "A: Zaha Hadid"
+    },
+
+    {
+        question: "Question 4: Which of these is the world's tallest circular building?",
+        answers:[
+            "A: Al Dar Headquaters",
+            "B: Phoenix International Media Center",
+            "C: The Guangzhou Circle",
+            "D: Radcliffe Camera"
+        ],
+        correctAns: "C: The Guangzhou Circle"
+    },
+
+    {
+        question: 'Question 5: Which of these architects designed Fallingwater?',
+        answers:[
+            "A: Renzo Piano",
+            "B: Frank Gehry",
+            "C: Ole Scheeren",
+            "D: Frank Lloyd Wright",
+        ],
+        correctAns: "D: Frank Lloyd Wright"
+    }
 ]
 
-answers = [
-    [
-        "A: Zaha Hadid",
-        "B: Le Corbsier",
-        "C: Robert Venturi",
-        "D: Frank Gehry",
-    ],
 
-     [
-        "A: Lotte World Tower",
-        "B: Shanghai Tower",
-        "C: Burj Khalifa",
-        "D: One World Trade Center",
-    ],
+// questions = [
+//     'Question 1: Which architect came up with the quote, "Less is a bore"?',
+//     'Question 2: Which building is the second tallest building in the world?',
+//     'Question 3: Which female architect was the first to win the Pritzker Architecture Prize?',
+//     "Question 4: Which of these is the world's tallest circular building?",
+//     'Question 5: Which of these architects designed Fallingwater?',
+// ]
 
-    [
-        "A: Zaha Hadid",
-        "B: Kazuyo Sejima",
-        "C: Carme Pigem",
-        "D: Yvonne Farrell",
-    ],
+// answers = [
+//     [
+//         "A: Zaha Hadid",
+//         "B: Le Corbsier",
+//         "C: Robert Venturi",
+//         "D: Frank Gehry",
+//     ],
 
-    [
-        "A: Al Dar Headquaters",
-        "B: Phoenix International Media Center",
-        "C: The Guangzhou Circle",
-        "D: Radcliffe Camera",
-    ],
+//      [
+//         "A: Lotte World Tower",
+//         "B: Shanghai Tower",
+//         "C: Burj Khalifa",
+//         "D: One World Trade Center",
+//     ],
 
-    [
-        "A: Renzo Piano",
-        "B: Frank Gehry",
-        "C: Ole Scheeren",
-        "D: Frank Lloyd Wright",
-    ]
-]
+//     [
+//         "A: Zaha Hadid",
+//         "B: Kazuyo Sejima",
+//         "C: Carme Pigem",
+//         "D: Yvonne Farrell",
+//     ],
+
+//     [
+//         "A: Al Dar Headquaters",
+//         "B: Phoenix International Media Center",
+//         "C: The Guangzhou Circle",
+//         "D: Radcliffe Camera",
+//     ],
+
+//     [
+//         "A: Renzo Piano",
+//         "B: Frank Gehry",
+//         "C: Ole Scheeren",
+//         "D: Frank Lloyd Wright",
+//     ]
+// ]
 
 
 // Create a paragraph that will hold the text of the question.
@@ -69,23 +127,17 @@ const questionThree = document.createElement('p');
 const questionFour = document.createElement('p');
 const questionFive = document.createElement('p');
 
-questionOne.innerText = `${questions[0]}`;
-questionTwo.innerText = `${questions[1]}`;
-questionThree.innerText = `${questions[2]}`;
-questionFour.innerText = `${questions[3]}`;
-questionFive.innerText = `${questions[4]}`;
+questionOne.innerText = `${questionsArray[0].question}`;
+questionTwo.innerText = `${questionsArray[1].question}`;
+questionThree.innerText = `${questionsArray[2].question}`;
+questionFour.innerText = `${questionsArray[3].question}`;
+questionFive.innerText = `${questionsArray[4].question}`;
 
-questionOne.setAttribute('id', 'levelOneQOne');
-questionTwo.setAttribute('id', 'levelOneQTwo');
-questionThree.setAttribute('id', 'levelOneQThree');
-questionFour.setAttribute('id', 'levelOneQFour');
-questionFive.setAttribute('id', 'levelOneQFive');
-
-// console.log(questionOne);
-// console.log(questionTwo);
-// console.log(questionThree);
-// console.log(questionFour);
-// console.log(questionFive);
+// questionOne.setAttribute('id', 'levelOneQOne');
+// questionTwo.setAttribute('id', 'levelOneQTwo');
+// questionThree.setAttribute('id', 'levelOneQThree');
+// questionFour.setAttribute('id', 'levelOneQFour');
+// questionFive.setAttribute('id', 'levelOneQFive');
 
 
 // Create Buttons: "Choice A"; "Choice B"; "Choice C"; "Choice D"
@@ -94,55 +146,15 @@ const choiceB = document.createElement('button');
 const choiceC = document.createElement('button');
 const choiceD = document.createElement('button');
 
-// const choiceE = document.createElement('button');
-// const choiceF = document.createElement('button');
-// const choiceG = document.createElement('button');
-// const choiceH = document.createElement('button');
+choiceA.setAttribute('id', 'buttonA');
+choiceB.setAttribute('id', 'buttonB');
+choiceC.setAttribute('id', 'buttonC');
+choiceD.setAttribute('id', 'buttonD');
 
-// const choiceI = document.createElement('button');
-// const choiceJ = document.createElement('button');
-// const choiceK = document.createElement('button');
-// const choiceL = document.createElement('button');
-
-// const choiceM = document.createElement('button');
-// const choiceN = document.createElement('button');
-// const choiceO = document.createElement('button');
-// const choiceP = document.createElement('button');
-
-// const choiceQ = document.createElement('button');
-// const choiceR = document.createElement('button');
-// const choiceS = document.createElement('button');
-// const choiceT = document.createElement('button');
-
-// choiceA.innerText = `${answers.ansToQuestOne[0]}`;
-// choiceB.innerText = `${answers.ansToQuestOne[1]}`;
-// choiceC.innerText = `${answers.ansToQuestOne[2]}`;
-// choiceD.innerText = `${answers.ansToQuestOne[3]}`;
-
-choiceA.setAttribute('class', 'wrongAns');
-choiceB.setAttribute('class', 'wrongAns');
-choiceC.setAttribute('class', 'rightAns');
-choiceD.setAttribute('class', 'wrongAns');
-
-// choiceE.setAttribute('class', 'wrongAns');
-// choiceF.setAttribute('class', 'rightAns');
-// choiceG.setAttribute('class', 'wrongAns');
-// choiceH.setAttribute('class', 'wrongAns');
-
-// choiceI.setAttribute('class', 'wrongAns');
-// choiceJ.setAttribute('class', 'wrongAns');
-// choiceK.setAttribute('class', 'rightAns');
-// choiceL.setAttribute('class', 'wrongAns');
-
-// choiceM.setAttribute('class', 'wrongAns');
-// choiceN.setAttribute('class', 'wrongAns');
-// choiceO.setAttribute('class', 'rightAns');
-// choiceP.setAttribute('class', 'wrongAns');
-
-// choiceQ.setAttribute('class', 'wrongAns');
-// choiceR.setAttribute('class', 'wrongAns');
-// choiceS.setAttribute('class', 'rightAns');
-// choiceT.setAttribute('class', 'wrongAns');
+choiceA.setAttribute('class', 'Answer');
+choiceB.setAttribute('class', 'Answer');
+choiceC.setAttribute('class', 'Answer');
+choiceD.setAttribute('class', 'Answer');
 
 document.body.appendChild(choiceA);
 document.body.appendChild(choiceB);
@@ -173,28 +185,60 @@ document.body.appendChild(nextBtn);
 // create a loop that goes thru the array of question.
 
 let nextSetOfQuest = 0
+let currentQuest = {}
 
 nextQuest = (event) => {
+    currentQuest = questionsArray[nextSetOfQuest]
     let divQuestion = document.querySelector(".currentQuestion");
-    let newQuest =  questions[nextSetOfQuest];
+    let newQuest =  questionsArray[nextSetOfQuest].question;
     divQuestion.innerText = newQuest;
     
-    let ansChoice = answers[nextSetOfQuest];
+    let ansChoice = questionsArray[nextSetOfQuest].answers;
     choiceA.innerText = ansChoice[0];
     choiceB.innerText = ansChoice[1];
     choiceC.innerText = ansChoice[2];
     choiceD.innerText = ansChoice[3];
 
+    // let button = document.querySelector(`${event.target.id}`)
+    // button.style.background = "lightskyblue"
+
+    resetBtnColor();
     nextSetOfQuest++
 };
 
 nextBtn.addEventListener('click', nextQuest)
 
 
+checkAns = (event) => {
+    console.log(event.target.innerText)
+    console.log(currentQuest)
+    if (event.target.innerText === currentQuest.correctAns) {
+        let button = document.querySelector(`#${event.target.id}`)
+        button.style.background = "green"
+        increaseScore()
+    } else {
+        let button = document.querySelector(`#${event.target.id}`);
+        button.style.background = "red"
+    }
+}
 
-
+choiceA.addEventListener('click', checkAns);
+choiceB.addEventListener('click', checkAns);
+choiceC.addEventListener('click', checkAns);
+choiceD.addEventListener('click', checkAns);
 
 // Create a tag for the level and the score.
+
+//create function that will take no parameters to find all 4 buttons to loop and set background color to skyblue
+
+resetBtnColor = () => {
+   let buttons =  document.querySelectorAll(".Answer");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].style.background = "lightskyblue"
+    }
+} 
+
+
 
 const levelScore = document.createElement('h2');
 const currentLevel = document.createElement('h2');
@@ -224,21 +268,58 @@ const increaseScore = () => {
 
 
 
+// Add an event listener to the correct answer so that it increments the score when clicked
+
+// addToScore = (event) => {
+//     console.log(event.target.innerText)
+//     if (event.target.innerText === currentQuest.correctAns) {
+//         let button = document.querySelector(`#${event.target.id}`)
+//         button.addEventListener('click', increaseScore)
+//     } else {
+//         let button = document.querySelector(`#${event.target.id}`);
+//         button.style.background = "red"
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Write a function that when turns the correct button choice to a question green and red if incorrect. Also the green button must add 10 points to the score when clicked.
 
-let correctAns = document.querySelector('.rightAns');
-let incorrectAns = document.querySelectorAll('.wrongAns');
 
-correctAns.addEventListener('click', () => 
-correctAns.style.background= "green",
-// console.log("green")
-);
+// let correctAns = document.querySelector('.rightAns');
+// let incorrectAns = document.querySelectorAll('.wrongAns');
 
-correctAns.addEventListener('click', increaseScore)
+// correctAns.addEventListener('click', () => 
+// correctAns.style.background= "green",
+// // console.log("green")
+// );
 
-for (let i = 0; i <incorrectAns.length; i++) {
-incorrectAns[i].addEventListener('click', () => 
-        incorrectAns[i].style.background = "red",
-        // console.log("red"),
-        // console.log(incorrectAns)
-)}
+// correctAns.addEventListener('click', increaseScore)
+
+// for (let i = 0; i <incorrectAns.length; i++) {
+// incorrectAns[i].addEventListener('click', () => 
+//         incorrectAns[i].style.background = "red",
+//         // console.log("red"),
+//         // console.log(incorrectAns)
+// )}
+
+

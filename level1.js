@@ -131,6 +131,8 @@ nextQuest = () => {
     choiceB.innerText = ansChoice[1];
     choiceC.innerText = ansChoice[2];
     choiceD.innerText = ansChoice[3];
+    
+    
 
     nextSetOfQuest++
 };
