@@ -1,5 +1,6 @@
 # KelpiusZ.github.io
 ## Architectural Trivial Game
+![winter](https://media.giphy.com/media/l41lQDKdlQNssYPiU/giphy.gif)
 ### Project Description
 Welcome to Arch trivia!
 A trivia game that tests your knowledge in the field of architecture. The quiz consists of three levels. Each level has five questions each, for a total of fifteen questions. The higher the level you reach, the harder the questions become. Do you have what it takes to pass this quiz, and become the ultimate Arch trivia quiz champion? Start the quiz and let's find out!!!
