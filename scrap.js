@@ -202,7 +202,7 @@ nextQuest = (event) => {
     // let button = document.querySelector(`${event.target.id}`)
     // button.style.background = "lightskyblue"
 
-    resetBtnColor();
+    resetBtnColor()
     nextSetOfQuest++
 };
 
@@ -227,10 +227,10 @@ choiceB.addEventListener('click', checkAns);
 choiceC.addEventListener('click', checkAns);
 choiceD.addEventListener('click', checkAns);
 
-// Create a tag for the level and the score.
 
 //create function that will take no parameters to find all 4 buttons to loop and set background color to skyblue
 
+// Create a tag for the level and the score.
 resetBtnColor = () => {
    let buttons =  document.querySelectorAll(".Answer");
     for (let i = 0; i < buttons.length; i++) {

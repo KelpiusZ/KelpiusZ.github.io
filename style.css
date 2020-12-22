@@ -31,14 +31,10 @@ body {
 
 
 .lvlScore {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
     font-family: 'Montserrat', sans-serif;
-
 }
+
+
 .currentLvl {
     font-family: 'Montserrat', sans-serif;
 }
@@ -65,4 +61,15 @@ h1 {
     letter-spacing: 2px;
     padding: 1rem;
     font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    /* background: rgba(255, 255, 255, 0.4); */
+    transition: all 0.5s linear;
+}
+
+a:hover {
+    color: black;
+    box-shadow: 2px 2px 2px 0 skyblue ;
 }
